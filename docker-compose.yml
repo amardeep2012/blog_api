@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: blog_postgres
+    environment:
+      POSTGRES_USER: rust_user
+      POSTGRES_PASSWORD: rust_password
+      POSTGRES_DB: blog_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - blog_network
+volumes:
+  postgres_data:
+networks:
+  blog_network:
+    driver: bridge

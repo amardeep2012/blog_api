@@ -1,0 +1,2 @@
+[default.databases]
+postgres_db = { url = "postgres://rust_user:rust_password@localhost:5432/blog_db" }
